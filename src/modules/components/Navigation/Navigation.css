@@ -28,20 +28,27 @@
 }
 
 .nav-logo a {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #f2b66d;
-  background: none;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: initial;
-  background-clip: text;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: white;
+  background: linear-gradient(135deg, #e56f51, #d4563f);
+  padding: 6px 10px;
+  border-radius: 8px;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  letter-spacing: -0.5px;
+  box-shadow: 0 8px 20px rgba(229, 111, 81, 0.3);
 }
 
 .nav-logo a:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0 12px 30px rgba(229, 111, 81, 0.4);
 }
 
 .nav-links {
@@ -136,14 +143,34 @@
   .nav-container {
     height: 60px;
     padding: 0 15px;
+    position: relative;
+    z-index: 1001;
+    justify-content: flex-start;
   }
 
   .mobile-toggle {
     display: flex;
+    z-index: 1002;
+    margin-left: 16px;
+  }
+
+  .nav-logo {
+    z-index: 1002;
   }
 
   .nav-logo a {
-    font-size: 1.5rem;
+    font-size: 0.85rem;
+    min-width: 30px;
+    height: 30px;
+    padding: 5px 8px;
+  }
+
+  .mobile-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #b0b0b0;
+    border-radius: 2px;
+    transition: all 0.3s ease;
   }
 
   .nav-links {
@@ -159,10 +186,11 @@
     transition: max-height 0.3s ease;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     border-top: 1px solid rgba(229, 111, 81, 0.1);
+    z-index: 999;
   }
 
   .nav-links.mobile-open {
-    max-height: 400px;
+    max-height: 500px;
   }
 
   .nav-links li {
@@ -189,9 +217,7 @@
   }
 
   .nav-cta {
-    margin: 12px 20px 15px;
-    width: calc(100% - 40px);
-    display: block;
+    display: none;
   }
 }
 
@@ -202,7 +228,7 @@
   }
 
   .nav-logo a {
-    font-size: 1.3rem;
+    font-size: 0.75rem;
   }
 
   .nav-links {

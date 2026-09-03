@@ -270,7 +270,7 @@
   }
 
   .timeline::before {
-    left: 12px;
+    left: 20px;
   }
 
   .timeline-item {
@@ -283,6 +283,10 @@
     width: 16px;
     height: 16px;
     border-width: 3px;
+  }
+
+  .marker-line {
+    display: none;
   }
 
   .timeline-content {
@@ -341,7 +345,7 @@
   }
 
   .timeline::before {
-    left: 8px;
+    left: 15px;
   }
 
   .timeline-item {

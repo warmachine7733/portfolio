@@ -58,79 +58,51 @@
   box-shadow: 0 30px 70px rgba(229, 111, 81, 0.2);
 }
 
-/* Project Image */
-.project-image-wrapper {
-  position: relative;
-  overflow: hidden;
-  height: 220px;
-  background: #1c4040;
-}
-
-.project-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.project-card:hover .project-overlay {
-  opacity: 1;
-}
-
 .project-links {
   display: flex;
-  gap: 20px;
+  gap: 12px;
+  margin-top: 24px;
 }
 
 .project-link {
-  padding: 12px 28px;
-  border-radius: 50px;
+  padding: 9px 18px;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
 }
 
 .project-link.live {
-  background: linear-gradient(135deg, #f2b66d, #f0a84a);
+  background: rgba(242, 182, 109, 0.85);
   color: #102a2c;
-  border: none;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  box-shadow: 0 8px 20px rgba(242, 182, 109, 0.3);
+  border: 1px solid rgba(242, 182, 109, 0.9);
+  box-shadow: 0 4px 12px rgba(15, 20, 25, 0.18);
 }
 
 .project-link.live:hover {
-  background: linear-gradient(135deg, #f0a84a, #e59a35);
+  background: #f2b66d;
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(242, 182, 109, 0.4);
+  box-shadow: 0 8px 18px rgba(242, 182, 109, 0.25);
 }
 
 .project-link.github {
-  background: linear-gradient(135deg, #e56f51, #d4563f);
+  background: rgba(30, 39, 51, 0.8);
   color: white;
-  border: none;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  box-shadow: 0 8px 20px rgba(229, 111, 81, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 4px 12px rgba(15, 20, 25, 0.18);
 }
 
 .project-link.github:hover {
-  background: linear-gradient(135deg, #d4563f, #c24529);
+  background: rgba(229, 111, 81, 0.9);
+  border-color: #e56f51;
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(229, 111, 81, 0.4);
+  box-shadow: 0 8px 18px rgba(229, 111, 81, 0.25);
 }
 
 /* Project Info */
 .project-info {
-  padding: 30px;
+  padding: 24px;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -239,10 +211,6 @@
     transform: none !important;
   }
 
-  .project-image-wrapper {
-    height: 180px;
-  }
-
   .project-info {
     padding: 20px;
   }
@@ -306,10 +274,6 @@
 
   .section-title {
     font-size: 1.5rem;
-  }
-
-  .project-image-wrapper {
-    height: 140px;
   }
 
   .project-info {

@@ -14,29 +14,6 @@ export const Projects: React.FC = () => {
         <div className="projects-grid">
           {projects.map((project) => (
             <div key={project.id} className="project-card">
-              <div className="project-image-wrapper">
-                <div className="project-overlay">
-                  <div className="project-links">
-                    <a
-                      href={project.links.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-link live"
-                    >
-                      View Live
-                    </a>
-                    <a
-                      href={project.links.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-link github"
-                    >
-                      GitHub
-                    </a>
-                  </div>
-                </div>
-              </div>
-
               <div className="project-info">
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-description">
@@ -58,6 +35,25 @@ export const Projects: React.FC = () => {
                     </li>
                   ))}
                 </ul>
+
+                <div className="project-links">
+                  <a
+                    href={project.links.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-link live"
+                  >
+                    View Live
+                  </a>
+                  <a
+                    href={project.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-link github"
+                  >
+                    GitHub
+                  </a>
+                </div>
               </div>
             </div>
           ))}

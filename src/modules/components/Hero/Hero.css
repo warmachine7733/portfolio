@@ -371,6 +371,21 @@
 
   .social-links {
     gap: 8px;
+    flex-wrap: wrap;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .social-link {
+    min-height: 36px;
+    padding: 0 12px;
+    font-size: 0.7rem;
+    flex: 0 1 calc(50% - 4px);
+    gap: 4px;
+  }
+
+  .social-arrow {
+    display: none;
   }
 
   .hero-visual {
@@ -400,7 +415,7 @@
     height: 45px;
     font-size: 0.8rem;
   }
-}
+
 
 @media (max-width: 480px) {
   .hero {
@@ -439,4 +454,5 @@
   .scroll-indicator {
     bottom: 15px;
   }
+}
 }
