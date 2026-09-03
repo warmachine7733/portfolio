@@ -232,7 +232,7 @@ export const socialLinks: Social[] = [
 // Personal Info
 export const personalInfo = {
   name: "Prateek Jena",
-  title: "Full-Stack Software Engineer",
+  title: "Senior Frontend Developer",
   bio: "Building scalable, efficient web applications with modern technologies. Passionate about clean code, performance optimization, and mentoring developers.",
   location: "India",
   email: "prateikjena@outlook.com",

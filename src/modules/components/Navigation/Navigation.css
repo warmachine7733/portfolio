@@ -127,7 +127,7 @@
 }
 
 .mobile-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(10px, 10px);
+  transform: translateY(8px) rotate(45deg);
 }
 
 .mobile-toggle.active span:nth-child(2) {
@@ -135,7 +135,7 @@
 }
 
 .mobile-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Responsive Navigation */
@@ -143,15 +143,18 @@
   .nav-container {
     height: 60px;
     padding: 0 15px;
+    width: 100%;
     position: relative;
     z-index: 1001;
-    justify-content: flex-start;
   }
 
   .mobile-toggle {
     display: flex;
     z-index: 1002;
-    margin-left: 16px;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
   }
 
   .nav-logo {
@@ -225,6 +228,10 @@
   .nav-container {
     height: 50px;
     padding: 0 12px;
+  }
+
+  .mobile-toggle {
+    right: 12px;
   }
 
   .nav-logo a {
