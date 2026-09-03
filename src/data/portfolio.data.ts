@@ -229,6 +229,31 @@ export const socialLinks: Social[] = [
   },
 ];
 
+const calculateCareerDuration = (experience: WorkExperience[]) => {
+  const millisecondsInDay = 1000 * 60 * 60 * 24;
+  const today = new Date();
+  const totalDays = experience.reduce((days, role) => {
+    const [joinDay, joinMonth, joinYear] = role.joinDate.split('/').map(Number);
+    const [exitDay, exitMonth, exitYear] = (role.exitDate ||
+      `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`)
+      .split('/')
+      .map(Number);
+    const start = Date.UTC(joinYear, joinMonth - 1, joinDay);
+    const end = Date.UTC(exitYear, exitMonth - 1, exitDay);
+
+    return days + Math.floor((end - start) / millisecondsInDay);
+  }, 0);
+
+  const years = Math.floor(totalDays / 365);
+  const months = Math.floor((totalDays % 365) / 30);
+  const yearLabel = `${years} year${years === 1 ? '' : 's'}`;
+  const monthLabel = `${months} month${months === 1 ? '' : 's'}`;
+
+  return `${yearLabel} ${monthLabel}`;
+};
+
+const yearsOfExperience = calculateCareerDuration(workExperience);
+
 // Personal Info
 export const personalInfo = {
   name: "Prateek Jena",
@@ -238,8 +263,8 @@ export const personalInfo = {
   email: "prateikjena@outlook.com",
   phone: "+91-8618248104",
   dob: "28 March 1995",
-  yearsOfExperience: "8+",
-  description: `Full-stack software developer with 8+ years of experience specializing in web application development. 
+  yearsOfExperience,
+  description: `Full-stack software developer with ${yearsOfExperience} of experience specializing in web application development. 
 Expert in React, Redux, Node.js, and Firebase, with domain experience in finance, telecom, and HR systems. 
 Focused on building efficient, secure, and maintainable software across frontend and backend technologies.`,
 };
