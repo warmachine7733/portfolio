@@ -28,6 +28,10 @@
   z-index: 1;
 }
 
+.resume-copy {
+  padding-top: 12px;
+}
+
 .resume-eyebrow {
   margin: 0 0 12px;
   color: #e56f51;
@@ -64,12 +68,14 @@
 .resume-download {
   padding: 14px 24px;
   border-radius: 50px;
+  font: inherit;
   font-weight: 700;
   text-decoration: none;
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .resume-view {
+  cursor: pointer;
   border: 1px solid rgba(242, 182, 109, 0.3);
   color: #f2b66d;
   background: rgba(30, 39, 51, 0.8);
@@ -93,15 +99,69 @@
   background: linear-gradient(135deg, #d4563f 0%, #c24529 100%);
 }
 
+.resume-modal {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(15, 20, 25, 0.84);
+}
+
+.resume-modal-content {
+  display: flex;
+  flex-direction: column;
+  width: min(1120px, 100%);
+  height: min(860px, calc(100vh - 48px));
+  overflow: hidden;
+  border: 2px solid rgba(229, 111, 81, 0.35);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+.resume-modal-close {
+  align-self: flex-end;
+  margin: 12px;
+  padding: 8px 14px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  background: #d4563f;
+}
+
+.resume-viewer {
+  min-height: 0;
+  flex: 1;
+}
+
 @media (max-width: 768px) {
   .resume {
-    padding: 80px 20px;
+    padding: 56px 20px;
   }
 
   .resume-content {
     align-items: flex-start;
     flex-direction: column;
-    padding: 40px 24px;
+    gap: 32px;
+    padding: 56px 24px 32px;
+  }
+
+  .resume .container {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .resume-eyebrow {
+    margin-top: 0;
+  }
+
+  .resume-copy {
+    padding-top: 12px;
   }
 
   .resume-title {
@@ -125,16 +185,37 @@
     text-align: center;
     padding: 12px 20px;
   }
+
+  .resume-modal {
+    padding: 16px;
+  }
+
+  .resume-modal-content {
+    height: calc(100vh - 32px);
+  }
 }
 
 @media (max-width: 480px) {
   .resume {
-    padding: 40px 15px;
+    padding: 48px 15px;
   }
 
   .resume-content {
-    gap: 24px;
-    padding: 24px 18px;
+    gap: 28px;
+    padding: 48px 18px 28px;
+  }
+
+  .resume .container {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .resume-eyebrow {
+    margin-top: 0;
+  }
+
+  .resume-copy {
+    padding-top: 10px;
   }
 
   .resume-actions {
@@ -148,5 +229,13 @@
 
   .resume-description {
     font-size: 0.9rem;
+  }
+
+  .resume-modal {
+    padding: 8px;
+  }
+
+  .resume-modal-content {
+    height: calc(100vh - 16px);
   }
 }
