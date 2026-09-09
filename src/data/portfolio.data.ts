@@ -160,7 +160,7 @@ export const projects: Project[] = [
     imageUrl: "https://portfolio-asset-files.s3.ap-northeast-1.amazonaws.com/local-api-mock.png",
     links: {
       live: "https://chromewebstore.google.com/detail/local-api-mock/cnbebghfccibfmnnmekgmgffnkjjcfij?authuser=0&hl=en",
-      github: "https://github.com/warmachine7733/local-api-mock",
+      github: "https://github.com/warmachine7733/interceptor-extension",
     },
     highlights: [
       "API response interception",
