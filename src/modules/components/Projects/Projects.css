@@ -5,6 +5,16 @@
   position: relative;
 }
 
+.ai-engineering {
+  margin-top: 80px;
+  scroll-margin-top: 100px;
+}
+
+.ai-engineering .projects-grid {
+  margin-top: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));

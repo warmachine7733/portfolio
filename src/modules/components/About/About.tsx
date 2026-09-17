@@ -40,6 +40,17 @@ export const About: React.FC = () => {
 
           <div className="skills-section">
             <div className="skill-category">
+              <h3>AI Engineering & Local LLMs</h3>
+              <div className="skill-tags">
+                {skills.aiEngineering.map((skill) => (
+                  <span key={skill} className="skill-tag">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="skill-category">
               <h3>Frontend</h3>
               <div className="skill-tags">
                 {skills.frontend.map((skill) => (

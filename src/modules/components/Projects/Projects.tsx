@@ -1,5 +1,5 @@
 import React from "react";
-import { projects } from "../../../data/portfolio.data";
+import { aiEngineeringExperience, projects } from "../../../data/portfolio.data";
 import "./Projects.css";
 
 export const Projects: React.FC = () => {
@@ -8,7 +8,7 @@ export const Projects: React.FC = () => {
       <div className="container">
         <h2 className="section-title">Featured Projects</h2>
         <p className="section-subtitle">
-          A selection of professional projects and side ventures
+          Developer tools built for frontend workflows, API testing and dependency tracking
         </p>
 
         <div className="projects-grid">
@@ -58,6 +58,30 @@ export const Projects: React.FC = () => {
             </div>
           ))}
         </div>
+        <section className="ai-engineering" id="ai-engineering" aria-labelledby="ai-engineering-title">
+          <h2 className="section-title" id="ai-engineering-title">AI Engineering</h2>
+          <p className="section-subtitle">
+            Hands-on work with local LLMs and AI-assisted software development
+          </p>
+          <div className="projects-grid">
+            {aiEngineeringExperience.map((experience) => (
+              <article key={experience.id} className="project-card">
+                <div className="project-info">
+                  <h3 className="project-title">{experience.title}</h3>
+                  <p className="project-description">{experience.description}</p>
+                  <ul className="project-highlights">
+                    {experience.highlights.map((highlight) => (
+                      <li key={highlight}>
+                        <span className="checkmark" aria-hidden="true">&#10003;</span>
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
       </div>
     </section>
   );

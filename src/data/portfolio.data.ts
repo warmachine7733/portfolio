@@ -145,8 +145,42 @@ export const skills = {
   backend: ["Node.js", "Express", "Firebase", "Microservices", "API Design"],
   database: ["MongoDB", "SQL", "Firebase Realtime DB"],
   devtools: ["Git", "Docker", "AWS", "Vercel", "Testing", "CI/CD"],
+  aiEngineering: ["Ollama", "Local LLM Inference", "Qwen", "Local Coding Agents", "Tool / Function Calling", "Context Engineering", "AMD ROCm", "AI-assisted Development"],
   soft: ["Problem Solving", "Team Leadership", "Architecture Design", "Performance Optimization"],
 };
+
+// Hands-on AI engineering experience, separate from published projects and employment.
+export const aiEngineeringExperience = [
+  {
+    id: "local-inference",
+    title: "Local LLM inference & tuning",
+    description: "Running coding models locally and tuning inference for available hardware.",
+    highlights: [
+      "Ran Qwen3 Coder and Qwen2.5 Coder with Ollama.",
+      "Configured AMD ROCm GPU acceleration and GPU/CPU model offloading to manage VRAM usage.",
+      "Configured and performance-tested 16K, 32K and 64K context windows.",
+    ],
+  },
+  {
+    id: "coding-agents",
+    title: "Local coding-agent integration",
+    description: "Connecting local coding models to VS Code and troubleshooting agent workflows.",
+    highlights: [
+      "Configured local coding models for VS Code workflows.",
+      "Worked with LLM tool/function calling for coding agents.",
+      "Debugged tool-call integration issues across models, Ollama and VS Code.",
+    ],
+  },
+  {
+    id: "ai-development",
+    title: "AI-assisted software engineering",
+    description: "Using Codex, GitHub Copilot and Kimi in practical software development workflows.",
+    highlights: [
+      "Used AI agents for code analysis, debugging and refactoring.",
+      "Applied agents to testing and repository-level development tasks.",
+    ],
+  },
+];
 
 // Personal Projects
 export const projects: Project[] = [
@@ -257,16 +291,14 @@ const yearsOfExperience = calculateCareerDuration(workExperience);
 // Personal Info
 export const personalInfo = {
   name: "Prateek Jena",
-  title: "Senior Frontend Developer",
-  bio: "Building scalable, efficient web applications with modern technologies. Passionate about clean code, performance optimization, and mentoring developers.",
+  title: "Senior React / TypeScript & Full-stack Engineer",
+  bio: "Building scalable web applications with React, TypeScript and Node.js, with hands-on AI engineering experience in local LLMs, coding agents and AI-assisted development.",
   location: "India",
   email: "prateikjena@outlook.com",
   phone: "+91-8618248104",
   dob: "28 March 1995",
   yearsOfExperience,
-  description: `Full-stack software developer with ${yearsOfExperience} of experience specializing in web application development. 
-Expert in React, Redux, Node.js, and Firebase, with domain experience in finance, telecom, and HR systems. 
-Focused on building efficient, secure, and maintainable software across frontend and backend technologies.`,
+  description: `Senior engineer with ${yearsOfExperience} of experience building frontend and full-stack web applications with React, TypeScript, Redux, Node.js and Firebase. Domain experience spans finance, telecom and HR systems, with a focus on performance, maintainability and mentoring developers. My practical AI engineering work includes local LLM inference, coding-agent integration and AI-assisted software development.`,
 };
 
 // Additional Info
