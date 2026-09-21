@@ -25,10 +25,12 @@ export interface Project {
   longDescription: string;
   technologies: string[];
   imageUrl: string;
-  links: {
+  links?: {
     live: string;
     github: string;
   };
+  demoRequest?: boolean;
+  featured?: boolean;
   highlights: string[];
 }
 
@@ -186,6 +188,24 @@ export const aiEngineeringExperience = [
 export const projects: Project[] = [
   {
     id: 1,
+    title: "FRAME",
+    description: "Private cross-platform personal media app for self-hosted media libraries",
+    longDescription:
+      "A private architecture case study for a React Native personal media app spanning iOS, iPadOS, macOS, Windows, and Android. FRAME currently streams from self-hosted SMB storage over LAN or Tailscale, with direct filesystem access planned as an additional library source. It enriches libraries with TMDB metadata and English subtitles, and combines a shared product layer with native playback integrations and FFmpeg-backed media processing.",
+    technologies: ["React Native", "TypeScript", "SMB", "Filesystem Access (planned)", "TMDB", "FFmpeg", "AVFoundation", "Media Foundation", "Tailscale"],
+    imageUrl: "",
+    demoRequest: true,
+    featured: true,
+    highlights: [
+      "Unified media identity across LAN and Tailscale endpoints, preventing duplicate content and playback state",
+      "Designed to support additional library sources, including direct filesystem access",
+      "Server-scoped movie, TV, anime, and custom libraries with persistent metadata and progress",
+      "Background metadata and subtitle enrichment that never blocks library discovery",
+      "Native playback paths with responsive desktop and mobile controls across five platforms",
+    ],
+  },
+  {
+    id: 2,
     title: "Local API Mock",
     description: "Chrome extension for mocking API responses in development",
     longDescription:
@@ -204,7 +224,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "wp-react-cli",
     description: "Fast CLI tool to scaffold React apps with Webpack",
     longDescription:
@@ -223,7 +243,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "Package Version Tracker",
     description: "Dashboard tool for tracking package versions across applications",
     longDescription:

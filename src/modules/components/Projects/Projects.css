@@ -68,6 +68,22 @@
   box-shadow: 0 30px 70px rgba(229, 111, 81, 0.2);
 }
 
+.project-card-featured {
+  grid-column: 1 / -1;
+}
+
+.project-card-featured .project-info {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: 48px;
+  align-items: start;
+}
+
+.project-card-featured .project-highlights {
+  padding-left: 32px;
+  border-left: 1px solid rgba(229, 111, 81, 0.28);
+}
+
 .project-links {
   display: flex;
   gap: 12px;
@@ -110,6 +126,19 @@
   box-shadow: 0 8px 18px rgba(229, 111, 81, 0.25);
 }
 
+.project-link.demo-request {
+  background: rgba(242, 182, 109, 0.85);
+  color: #102a2c;
+  border: 1px solid rgba(242, 182, 109, 0.9);
+  box-shadow: 0 4px 12px rgba(15, 20, 25, 0.18);
+}
+
+.project-link.demo-request:hover {
+  background: #f2b66d;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(242, 182, 109, 0.25);
+}
+
 /* Project Info */
 .project-info {
   padding: 24px;
@@ -133,6 +162,10 @@
   line-height: 1.6;
   margin-bottom: 20px;
   flex-grow: 1;
+}
+
+.project-summary {
+  min-width: 0;
 }
 
 /* Tech Stack */
@@ -223,6 +256,16 @@
 
   .project-info {
     padding: 20px;
+  }
+
+  .project-card-featured .project-info {
+    display: flex;
+    gap: 20px;
+  }
+
+  .project-card-featured .project-highlights {
+    padding-left: 0;
+    border-left: 0;
   }
 
   .project-title {
