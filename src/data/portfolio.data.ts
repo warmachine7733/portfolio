@@ -317,7 +317,7 @@ export const personalInfo = {
   bio: "Building scalable web applications with React, TypeScript and Node.js, with hands-on AI engineering experience in local LLMs, coding agents and AI-assisted development.",
   location: "India",
   email: "prateikjena@outlook.com",
-  phone: "+91-8618248104",
+  phone: "+91-8123888117",
   dob: "28 March 1995",
   yearsOfExperience,
   description: `Senior engineer with ${yearsOfExperience} of experience building frontend and full-stack web applications with React, TypeScript, Redux, Node.js and Firebase. Domain experience spans finance, telecom and HR systems, with a focus on performance, maintainability and mentoring developers. My practical AI engineering work includes local LLM inference, coding-agent integration and AI-assisted software development.`,
