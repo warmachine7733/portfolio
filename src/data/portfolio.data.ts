@@ -191,8 +191,8 @@ export const projects: Project[] = [
     title: "FRAME",
     description: "Private cross-platform personal media app for self-hosted media libraries",
     longDescription:
-      "A private architecture case study for a React Native personal media app spanning iOS, iPadOS, macOS, Windows, and Android. FRAME currently streams from self-hosted SMB storage over LAN or Tailscale, with local device filesystem access planned as an additional library source. It enriches libraries with TMDB metadata and English subtitles, and combines a shared product layer with native playback integrations and FFmpeg-backed media processing.",
-    technologies: ["React Native", "TypeScript", "SMB", "Local Filesystem (planned)", "TMDB", "FFmpeg", "AVFoundation", "Media Foundation", "Tailscale"],
+      "A private architecture case study for a React Native personal media app spanning iOS, iPadOS, macOS, and Windows, with Android planned. FRAME currently streams from self-hosted SMB storage over LAN or Tailscale, with local device filesystem access planned as an additional library source. It enriches libraries with TMDB metadata and English subtitles, and combines a shared product layer with native playback integrations and FFmpeg-backed media processing.",
+    technologies: ["React Native", "TypeScript", "SMB", "Local Filesystem (planned)", "Android (planned)", "TMDB", "FFmpeg", "AVFoundation", "Media Foundation", "Tailscale"],
     imageUrl: "",
     demoRequest: true,
     featured: true,
@@ -201,7 +201,7 @@ export const projects: Project[] = [
       "Designed to support additional library sources, including local device filesystem access",
       "Server-scoped movie, TV, anime, and custom libraries with persistent metadata and progress",
       "Background metadata and subtitle enrichment that never blocks library discovery",
-      "Native playback paths with responsive desktop and mobile controls across five platforms",
+      "Native playback paths with responsive desktop and mobile controls, with Android planned",
     ],
   },
   {
