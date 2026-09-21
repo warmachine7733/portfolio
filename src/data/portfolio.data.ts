@@ -298,12 +298,14 @@ const calculateCareerDuration = (experience: WorkExperience[]) => {
     return days + Math.floor((end - start) / millisecondsInDay);
   }, 0);
 
-  const years = Math.floor(totalDays / 365);
-  const months = Math.floor((totalDays % 365) / 30);
+  const wholeYears = Math.floor(totalDays / 365);
+  const remainingMonths = Math.floor((totalDays % 365) / 30);
+  const years = wholeYears + Math.floor(remainingMonths / 12);
+  const months = remainingMonths % 12;
   const yearLabel = `${years} year${years === 1 ? '' : 's'}`;
   const monthLabel = `${months} month${months === 1 ? '' : 's'}`;
 
-  return `${yearLabel} ${monthLabel}`;
+  return months === 0 ? yearLabel : `${yearLabel} ${monthLabel}`;
 };
 
 const yearsOfExperience = calculateCareerDuration(workExperience);
