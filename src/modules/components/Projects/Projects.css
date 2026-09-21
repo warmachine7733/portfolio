@@ -84,6 +84,31 @@
   border-left: 1px solid rgba(229, 111, 81, 0.28);
 }
 
+/* Keep standard project cards in their original vertical flow. */
+.project-card:not(.project-card-featured) .project-summary {
+  display: contents;
+}
+
+.project-card:not(.project-card-featured) .project-title {
+  order: 1;
+}
+
+.project-card:not(.project-card-featured) .project-description {
+  order: 2;
+}
+
+.project-card:not(.project-card-featured) .project-tech {
+  order: 3;
+}
+
+.project-card:not(.project-card-featured) .project-highlights {
+  order: 4;
+}
+
+.project-card:not(.project-card-featured) .project-links {
+  order: 5;
+}
+
 .project-links {
   display: flex;
   gap: 12px;
