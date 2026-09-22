@@ -204,7 +204,7 @@ export const projects: Project[] = [
     screenshots: [
       { src: "/frame/frame-home.jpg", alt: "FRAME iPad home screen showing featured media and movie libraries", label: "Home" },
       { src: "/frame/frame-library-scan.jpg", alt: "FRAME library scan completion summary on iPad", label: "Library scan" },
-      { src: "/frame/frame-anime-home.jpg", alt: "FRAME iPad home screen with anime featured media", label: "Browse" },
+      { src: "/frame/frame-smb-source.jpg", alt: "FRAME active SMB server and configured storage source on iPad", label: "SMB source" },
       { src: "/frame/frame-movie-library.jpg", alt: "FRAME searchable movies library grid on iPad", label: "Movies" },
       { src: "/frame/frame-downloads.jpg", alt: "FRAME downloads screen with offline download progress", label: "Downloads" },
       { src: "/frame/frame-player.jpg", alt: "FRAME native video player controls on iPad", label: "Player" },
