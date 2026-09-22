@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { aiEngineeringExperience, personalInfo, projects } from "../../../data/portfolio.data";
 import "./Projects.css";
 
 export const Projects: React.FC = () => {
+  const [activeGallery, setActiveGallery] = useState<{
+    screenshots: { src: string; alt: string; label: string }[];
+    index: number;
+  } | null>(null);
+  const activeScreenshot = activeGallery?.screenshots[activeGallery.index];
+
+  const changeScreenshot = (direction: number) => {
+    setActiveGallery((gallery) => {
+      if (!gallery) return null;
+      const index = (gallery.index + direction + gallery.screenshots.length) % gallery.screenshots.length;
+      return { ...gallery, index };
+    });
+  };
+
   return (
     <section id="projects" className="projects">
       <div className="container">
         <h2 className="section-title">Featured Projects</h2>
-        <p className="section-subtitle">
-          Private architecture case studies and developer tools
-        </p>
+        <p className="section-subtitle">A few things I’ve built</p>
 
         <div className="projects-grid">
           {projects.map((project) => (
@@ -31,9 +43,20 @@ export const Projects: React.FC = () => {
                       <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="project-link github">GitHub</a>
                     </div>
                   )}
-                  {project.demoRequest && (
+                  {(project.screenshots || project.demoRequest) && (
                     <div className="project-links">
-                      <a href={`mailto:${personalInfo.email}?subject=${encodeURIComponent(`Demo request: ${project.title}`)}`} className="project-link demo-request">Ask for a demo</a>
+                      {project.screenshots && (
+                        <button
+                          type="button"
+                          className="project-link product-screens"
+                          onClick={() => setActiveGallery({ screenshots: project.screenshots!, index: 0 })}
+                        >
+                          View product screens ({project.screenshots.length})
+                        </button>
+                      )}
+                      {project.demoRequest && (
+                        <a href={`mailto:${personalInfo.email}?subject=${encodeURIComponent(`Demo request: ${project.title}`)}`} className="project-link demo-request">Ask for a demo</a>
+                      )}
                     </div>
                   )}
                 </div>
@@ -47,6 +70,17 @@ export const Projects: React.FC = () => {
             </article>
           ))}
         </div>
+        {activeScreenshot && activeGallery && (
+          <div className="screenshot-lightbox" role="dialog" aria-modal="true" aria-label={activeScreenshot.label} onClick={() => setActiveGallery(null)}>
+            <div className="screenshot-lightbox-content" onClick={(event) => event.stopPropagation()}>
+              <button type="button" className="screenshot-lightbox-close" onClick={() => setActiveGallery(null)} aria-label="Close screenshot">×</button>
+              <img src={activeScreenshot.src} alt={activeScreenshot.alt} />
+              <button type="button" className="screenshot-lightbox-nav screenshot-lightbox-prev" onClick={() => changeScreenshot(-1)} aria-label="Previous screenshot">‹</button>
+              <button type="button" className="screenshot-lightbox-nav screenshot-lightbox-next" onClick={() => changeScreenshot(1)} aria-label="Next screenshot">›</button>
+              <p className="screenshot-lightbox-label">{activeScreenshot.label} · {activeGallery.index + 1} / {activeGallery.screenshots.length}</p>
+            </div>
+          </div>
+        )}
         <section className="ai-engineering" id="ai-engineering" aria-labelledby="ai-engineering-title">
           <h2 className="section-title" id="ai-engineering-title">AI Engineering</h2>
           <p className="section-subtitle">
