@@ -196,8 +196,8 @@ export const projects: Project[] = [
     title: "FRAME",
     description: "Private cross-platform personal media app for self-hosted media libraries",
     longDescription:
-      "A cross-platform personal media app for streaming self-hosted libraries across iOS, iPadOS, macOS, and Windows. Android is planned. FRAME currently streams from self-hosted SMB storage over LAN or Tailscale, with local device filesystem access planned as an additional library source. It enriches libraries with TMDB metadata and English subtitles, and combines a shared product layer with native playback integrations and FFmpeg-backed media processing.",
-    technologies: ["React Native", "TypeScript", "SMB", "Local Filesystem (planned)", "Android (planned)", "TMDB", "FFmpeg", "AVFoundation", "Media Foundation", "Tailscale"],
+      "A cross-platform personal media app for streaming self-hosted libraries across iOS, iPadOS, macOS, and Windows. Android is planned. FRAME streams from self-hosted SMB storage over LAN or Tailscale and supports reading and scanning media from the local device filesystem. It enriches libraries with TMDB metadata and English subtitles, and combines a shared product layer with native playback integrations and FFmpeg-backed media processing.",
+    technologies: ["React Native", "TypeScript", "SMB", "Local Filesystem", "Android (planned)", "TMDB", "FFmpeg", "AVFoundation", "Media Foundation", "Tailscale"],
     imageUrl: "",
     demoRequest: true,
     featured: true,
@@ -211,7 +211,7 @@ export const projects: Project[] = [
     ],
     highlights: [
       "Unified media identity across LAN and Tailscale endpoints, preventing duplicate content and playback state",
-      "Designed to support additional library sources, including local device filesystem access",
+      "Reads and scans media from the local device filesystem",
       "Server-scoped movie, TV, anime, and custom libraries with persistent metadata and progress",
       "Background metadata and subtitle enrichment that never blocks library discovery",
       "Native playback paths with responsive desktop and mobile controls, with Android planned",
